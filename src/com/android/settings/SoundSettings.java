@@ -231,6 +231,10 @@ public class SoundSettings extends PreferenceActivity implements
                 mAudioManager.setVibrateSetting(
                     AudioManager.VIBRATE_TYPE_RINGER,
                     AudioManager.VIBRATE_SETTING_ONLY_SILENT);
+                mAudioManager.setVibrateSetting(
+                    AudioManager.VIBRATE_TYPE_NOTIFICATION,
+                    AudioManager.VIBRATE_SETTING_ONLY_SILENT);
+                    
             }
             if (callsVibrateSetting == AudioManager.VIBRATE_SETTING_ON) {
                 return VALUE_VIBRATE_ALWAYS;
@@ -243,6 +247,10 @@ public class SoundSettings extends PreferenceActivity implements
                 mAudioManager.setVibrateSetting(
                     AudioManager.VIBRATE_TYPE_RINGER,
                     AudioManager.VIBRATE_SETTING_OFF);
+                mAudioManager.setVibrateSetting(
+                    AudioManager.VIBRATE_TYPE_NOTIFICATION,
+                    AudioManager.VIBRATE_SETTING_OFF);
+                    
             }
             if (callsVibrateSetting == AudioManager.VIBRATE_SETTING_ON) {
                 return VALUE_VIBRATE_UNLESS_SILENT;
@@ -284,6 +292,9 @@ public class SoundSettings extends PreferenceActivity implements
 
         mAudioManager.setVibrateSetting(
             AudioManager.VIBRATE_TYPE_RINGER,
+            callsVibrateSetting);
+        mAudioManager.setVibrateSetting(
+            AudioManager.VIBRATE_TYPE_NOTIFICATION,
             callsVibrateSetting);
     }
 
